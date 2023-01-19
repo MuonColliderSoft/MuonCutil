@@ -1,3 +1,104 @@
+
+#######################################################################################################################
+v02-07-MC
+#######################################################################################################################
+
+Released also on CentOStream 8
+
+External software
+
+    GEANT4 10.6.3-1.muonc (BTW Those packages have been built with special constraint (C++-17, MT, Qt-support) and cannot be used for other projects)
+    Boost 1.7.3
+
+New packages
+
+    ACTS library → v13.0.0-MCC : an experiment-independent toolkit for (charged) particle track reconstruction in (high energy) physics experiments implemented in modern C++.
+        A new marlin processor has been added to use this library: ACTSTracking → v1.0.0
+    Added some new filters to MarlinTrkprocessor:
+        SplitCollectionByPolarAngle: the processor selects and saves the tracker hits with a polar angle within a certain range, defined by the lower and upper limits, along with the corresponding sim hits and the reco-sim relations.
+        FilterConeHits: the processor selects and saves the tracker hits that are included in a cone around the MC particle trajectory along with the corresponding sim hits and the reco-sim relations.
+        FilterTimeHits: filtering hits depending on their time corrected by the time of flight. Particle propagation at a speed<c is supported via the TargetBeta parameter.
+    Add the new Crilin ECAL
+
+Packages changes wrt. to v02-06-MC
+
+        ConformalTracking → v01-12-MC
+            Add the possibility to do a regional tracking inside a theta range
+
+                New configuration parameters:
+                MaxHitAngle: Maximum polar angle of hits to be fitted [3.1415927]
+                MinHitAngle: Minimum polar angle of hits to be fitted [0.0]
+
+            Add cone-tracking algorithm 
+
+                It uses a collection of particles (jets): JetCaloCollection, iterates over it selecting only the hits inside a cone of ray: DeltaRCut around jet direction and does a separated tracking inside each cone. If JetCaloCollection is empty use default tracking.
+
+                New configuration parameters:
+                JetCaloCollection: name of the collection with the previously found jets (cone are created around its) [""]
+                DeltaRCut: maximum angular distance between the hits and the particle direction [1.0]
+
+        MarlinTrkprocessor → v02-13-MC
+            Filter to split collection by polar angle
+            Cone filter
+            Time filter
+
+        Overlay → v00-23-MC
+            Fix Overlay when not preserving truth particles
+                Fix Overlay algorithm to reset tracker hit pointers to Overlay MC particles when those are not preserved. Keep momentum information anyway before setting the link to a null pointer.
+                Actually setting overlay flag in simulated tracker hit
+                Incompatibility issue Files created with previous releases, where MC particles are removed, are no more usable from this release. 
+
+        detector-simulation → v01-02-MC
+            Added simple text description of the MuColl_v1 geometry 
+            Add new Crilin calorimeter
+
+        LCTuple → v01-14-MC
+            Implement dumping of individual tracker hits making the tracker clusters/measurements Relevant only if stored, which happens only if a realistic digitization is used.
+            Jet substructure observables added
+
+        DDMarlinPandora → v00-13-MC
+            The BIB subtraction in ECAL has been updated. Crilin ECAL can also be used as option
+
+        MuonCutil → v02-07-MC
+            In MuonCutil/releases/development/release-ilcsoft.cfg any references to mc branches have been removed, This is necessary since we have changed the usage policies for git
+
+        iLCInstall → v02-03-01-MC
+            It contains a module for ACTS and several fixes not yet available in the original iLCSoft code.
+
+These packages have a new tag-release in the official repository and have been updated:
+
+        LCIO → v02-16-01-MC
+            https://github.com/iLCSoft/LCIO/releases/tag/v02-16
+            https://github.com/iLCSoft/LCIO/releases/tag/v02-16-01
+        MarlinUtil  → v01-16
+            https://github.com/iLCSoft/MarlinUtil/releases/tag/v01-16
+        MarlinReco → v01-31
+            https://github.com/iLCSoft/MarlinReco/releases/tag/v01-29
+            https://github.com/iLCSoft/MarlinReco/releases/tag/v01-30
+            https://github.com/iLCSoft/MarlinReco/releases/tag/v01-31
+        CEDViewer → v01-18
+            https://github.com/iLCSoft/CEDViewer/releases/tag/v01-18
+        SIO → v00-01
+            https://github.com/iLCSoft/SIO/releases/tag/v00-00-03
+            https://github.com/iLCSoft/SIO/releases/tag/v00-00-04
+            https://github.com/iLCSoft/SIO/releases/tag/v00-01
+
+#######################################################################################################################
+v02-06-MC
+#######################################################################################################################
+
+Recompile everything against c++17
+
+External software
+
+    Root 6.22.06-1 (built against C++17)
+    HepMC3 3.2.3-1 (to fix bug: MC-3)
+
+Packages changes wrt. to v02-05-MC
+
+    DD4Hep → v01-16
+        See release note (https://github.com/AIDASoft/DD4hep/releases/tag/v01-16)
+
 #######################################################################################################################
 v02-05-MC
 #######################################################################################################################
@@ -132,7 +233,7 @@ Official ILCSoft release v02-02 plus
         Optimized merging for the BIB from Muon Collider
         Added support for lower/upper integration time boundaries in OverlayTimingGeneric
     detector-simulation
-         Added mod2 version of the CLIC geometry with reduced gap between ECAL Endcaps and nozzles
+        Added mod2 version of the CLIC geometry with reduced gap between ECAL Endcaps and nozzles
         Added mod3 geometry with the vertex detector dimnesions similar to the MAP geometry
         Added CLIC_o3_v14_mod4 geometry with VTXB segmented along Z
         Adjusted the class of the Z-segmented VXD barrel in CLIC_o3_v14_mod4
