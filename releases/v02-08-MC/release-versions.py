@@ -90,8 +90,6 @@ Boost_version = "1.75.0-8"
 Eigen_version = "3.4.0-1"
 
 XercesC_version = "v3.2.3-5"
-# xerces-c (needed by geant4 for building gdml support - required by mokka)
-#XERCESC_ROOT_DIR = ilcPath + "/xercesc/" + XercesC_version
 
 ## Compiled software
 CMake_version = "3.15.5"
@@ -114,6 +112,8 @@ MarlinReco_version = "v01-31"
 
 MarlinUtil_version = "v01-16"
 
+DetectorSimulation_version = "v01-02-MC"
+
 # ---
 
 DD4hep_version = "v01-20-02"
@@ -131,7 +131,7 @@ LCFIPlus_version = "v00-09"
 
 MarlinTrk_version = "v02-08"
 
-MarlinTrkProcessors_version = "MoveHitsCut"
+MarlinTrkProcessors_version = "v02-03-MC"
 
 ForwardTracking_version = "v01-14-MC"
 
