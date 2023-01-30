@@ -90,85 +90,91 @@ Boost_version = "1.75.0-8"
 Eigen_version = "3.4.0-1"
 
 XercesC_version = "v3.2.3-5"
+# xerces-c (needed by geant4 for building gdml support - required by mokka)
+#XERCESC_ROOT_DIR = ilcPath + "/xercesc/" + XercesC_version
 
 ## Compiled software
 CMake_version = "3.15.5"
 
-FastJet_version = "3.2.1"
-FastJetcontrib_version = "1.025"
+FastJet_version = "3.4.0"
+FastJetcontrib_version = "1.050"
 
-CED_version = "v01-09-03"
+CED_version = "v01-09-04"
 
 SIO_version = "v00-01"
 
-ILCUTIL_version = "v01-06-01"
+ILCUTIL_version = "v01-07"
 
 # -------------------------------------------
 # Marlin framework
 
-Marlin_version = "v01-17-01"
+Marlin_version = "v01-19"
 
-MarlinReco_version = "v01-31"
+MarlinReco_version = "v01-33-01"
 
-MarlinUtil_version = "v01-16"
+MarlinUtil_version = "v01-17"
 
-DetectorSimulation_version = "v01-02-MC"
+DetectorSimulation_version = "v01-03-MC"
 
 # ---
 
-DD4hep_version = "v01-20-02"
-DD4hepExamples_version = "v01-20-02"
+DD4hep_version = "v01-23"
+DD4hepExamples_version = "v01-23"
 MarlinDD4hep_version = "v00-06-02"
 
 PandoraAnalysis_version = "v02-00-01"
-PandoraPFANew_version   = "v03-25-03"
-DDMarlinPandora_version = "v00-13-MC"
+PandoraPFANew_version   = "v04-02-00"
+DDMarlinPandora_version = "HEAD"
 
 LCFIVertex_version = "v00-08"
-LCFIPlus_version = "v00-09"
+LCFIPlus_version = "v00-10-01"
 
 # ---
 
-MarlinTrk_version = "v02-08"
+MarlinTrk_version = "v02-09-01"
 
-MarlinTrkProcessors_version = "v02-03-MC"
+#MarlinTrkProcessors_version = "v02-03-MC"
+MarlinTrkProcessors_version = "HEAD"
 
 ForwardTracking_version = "v01-14-MC"
 
 ConformalTracking_version = "v01-12-MC"
 
-ACTS_version = "v13.0.0-MCC"
-ACTSTracking_version = "v1.0.0"
+ACTS_version = "v13.0.0"
+ACTSTracking_version = "v1.1.0"
 
 KiTrack_version = "v01-10"
-KiTrackMarlin_version = "v01-13"
+KiTrackMarlin_version = "v01-13-02"
 
-DDKalTest_version = "v01-06"
-KalTest_version = "v02-05"
+DDKalTest_version = "v01-07"
+KalTest_version = "v02-05-01"
 KalDet_version = "v01-14-01"
 
-MarlinKinfit_version = "v00-06"
-MarlinKinfitProcessors_version = "v00-04-02"
+MarlinKinfit_version = "v00-06-01"
+MarlinKinfitProcessors_version = "v00-05"
 
 # ---
 
-MarlinFastJet_version = "v00-05-02"
+MarlinFastJet_version = "v00-05-03"
 
 LCTuple_version = "v01-14-MC"
 
-ClicPerformance_version = "HEAD"
+ClicPerformance_version = "v02-04-01"
+
+MuonCVXDDigitiser_version = "HEAD"
 
 # ---
 
 CEDViewer_version = "v01-19-01"
 
-Overlay_version = "v00-23-MC"
+Overlay_version = "HEAD"
 
-lcgeo_version = "v00-16-08-MC"
+lcgeo_version = "HEAD"
 
-LCIO_version = "v02-16-01-MC"
+#LCIO_version = "v02-16-01-MC"
+LCIO_version = "HEAD"
 
-GEAR_version = "v01-09"
+GEAR_version = "v01-09-01"
 
 Garlic_version = "v03-01"
 
@@ -176,7 +182,7 @@ aidaTT_version = "v00-10"
 
 RAIDA_version = "v01-09"
 
-GBL_version = "V02-02-00" 
+GBL_version = "V02-02-01" 
 
 # ------------------------------------------------
 
