@@ -3,7 +3,8 @@
 # MuonCollider versioning file for release V02-08-MC
 # The external base tools need to be installed
 #
-# MuonC Software team
+# Author: MuonC Software team 
+# Date: March 01, 2023
 ###########################################
 import datetime
 import platform
@@ -89,9 +90,8 @@ Boost_version = "1.75.0-8"
 
 Eigen_version = "3.4.0-1"
 
-XercesC_version = "v3.2.3-5"
 # xerces-c (needed by geant4 for building gdml support - required by mokka)
-#XERCESC_ROOT_DIR = ilcPath + "/xercesc/" + XercesC_version
+XercesC_version = "v3.2.3-5"
 
 ## Compiled software
 CMake_version = "3.15.5"
@@ -114,7 +114,7 @@ MarlinReco_version = "v01-33-01"
 
 MarlinUtil_version = "v01-17"
 
-DetectorSimulation_version = "v01-03-MC"
+DetectorSimulation_version = "v01-04-MC"
 
 # ---
 
@@ -124,7 +124,7 @@ MarlinDD4hep_version = "v00-06-02"
 
 PandoraAnalysis_version = "v02-00-01"
 PandoraPFANew_version   = "v04-02-00"
-DDMarlinPandora_version = "HEAD"
+DDMarlinPandora_version = "v00-14-MC"
 
 LCFIVertex_version = "v00-08"
 LCFIPlus_version = "v00-10-01"
@@ -133,8 +133,7 @@ LCFIPlus_version = "v00-10-01"
 
 MarlinTrk_version = "v02-09-01"
 
-#MarlinTrkProcessors_version = "v02-03-MC"
-MarlinTrkProcessors_version = "HEAD"
+MarlinTrkProcessors_version = "v02-14-MC"
 
 ForwardTracking_version = "v01-14-MC"
 
@@ -157,7 +156,7 @@ MarlinKinfitProcessors_version = "v00-05"
 
 MarlinFastJet_version = "v00-05-03"
 
-LCTuple_version = "v01-14-MC"
+LCTuple_version = "v01-15-MC"
 
 ClicPerformance_version = "v02-04-01"
 
@@ -167,12 +166,11 @@ MuonCVXDDigitiser_version = "HEAD"
 
 CEDViewer_version = "v01-19-01"
 
-Overlay_version = "HEAD"
+Overlay_version = "v00-24-MC"
 
-lcgeo_version = "HEAD"
+lcgeo_version = "v00-17-MC"
 
-#LCIO_version = "v02-16-01-MC"
-LCIO_version = "HEAD"
+LCIO_version = "v02-17-MC"
 
 GEAR_version = "v01-09-01"
 
