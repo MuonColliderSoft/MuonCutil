@@ -279,3 +279,28 @@
   <parameter name="MinClustersOnTrackAfterFit" type="int">3 </parameter>
 </processor>
 
+ <processor name="MyFilterTracks" type="FilterTracks">
+ <!--FilterTracks processor filters a collection of tracks based on NHits and MinPt and outputs a filtered collection-->
+  <!--If true, just keep tracks with only barrel hits-->
+  <parameter name="BarrelOnly" type="bool">false </parameter>
+  <!--Spatial chi squared-->
+  <parameter name="Chi2Spatial" type="float">0 </parameter>
+  <!--Name of the input collection-->
+  <parameter name="InputTrackCollectionName" type="string" lcioInType="Track"> SiTracks </parameter>
+  <!--Minimum transverse momentum-->
+  <parameter name="MinPt" type="float">1 </parameter>
+  <!--Minimum number of hits on inner tracker-->
+  <parameter name="NHitsInner" type="int">3 </parameter>
+  <!--Minimum number of hits on outer tracker-->
+  <parameter name="NHitsOuter" type="int">0 </parameter>
+  <!--Minimum number of hits on track-->
+  <parameter name="NHitsTotal" type="int">7 </parameter>
+  <!--Minimum number of hits on vertex detector-->
+  <parameter name="NHitsVertex" type="int">4 </parameter>
+  <!--Name of output collection-->
+  <parameter name="OutputTrackCollectionName" type="string" lcioOutType="Track">FilteredTracks </parameter>
+  <!--verbosity level of this processor ("DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT")-->
+  <!--parameter name="Verbosity" type="string">DEBUG </parameter-->
+</processor>
+
+
