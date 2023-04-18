@@ -114,12 +114,12 @@ MarlinReco_version = "v01-33-01"
 
 MarlinUtil_version = "v01-17"
 
-DetectorSimulation_version = "v01-04-MC"
+#DetectorSimulation_version = "v01-04-MC"
 
 # ---
 
-DD4hep_version = "v01-23"
-DD4hepExamples_version = "v01-23"
+DD4hep_version = "v01-25-01"
+DD4hepExamples_version = "v01-25-01"
 MarlinDD4hep_version = "v00-06-02"
 
 PandoraAnalysis_version = "v02-00-01"
@@ -133,6 +133,7 @@ LCFIPlus_version = "v00-10-01"
 
 MarlinTrk_version = "v02-09-01"
 
+# TODO new version required
 MarlinTrkProcessors_version = "v02-14-MC"
 
 ForwardTracking_version = "v01-14-MC"
@@ -168,6 +169,7 @@ CEDViewer_version = "v01-19-01"
 
 Overlay_version = "v00-24-MC"
 
+# TODO new version required
 lcgeo_version = "v00-17-MC"
 
 LCIO_version = "v02-17-MC"
