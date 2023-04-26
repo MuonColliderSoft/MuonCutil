@@ -38,7 +38,13 @@ href="http://ilcsoft.desy.de/marlin/marlin.xsl"?
     </if>
 
     <!-- ==========  TrackerDigitization.xml ========== -->
+    <|-- Default Smearing digitizer -->
     <processor name="VXDBarrelDigitiser"/>
+    <|-- New digitizer -->
+    <#processor name="VXDDigitiser"/>
+    <|-- *Experimental* Digitizer with TimeWindow -->
+    <#processor name="VXDTWDigitiser"/>
+
     <processor name="VXDEndcapDigitiser"/>
     <processor name="InnerPlanarDigiProcessor"/>
     <processor name="InnerEndcapPlanarDigiProcessor"/>
@@ -61,7 +67,7 @@ href="http://ilcsoft.desy.de/marlin/marlin.xsl"?
     </if>
 
     <processor name="Refit" />
-    <!--processor name="MyFilterTracks"--/>
+    <!-- processor name="MyFilterTracks"/ -->
 
     <!-- ========== Calo.xml ============ -->
     <processor name="MyDDCaloDigi"/>
@@ -121,7 +127,6 @@ href="http://ilcsoft.desy.de/marlin/marlin.xsl"?
   <!-- ======================================================================================================== -->
 
   <processor name="Config" type="CLICRecoConfig" >
-    <parameter name="Verbosity" options="DEBUG0-9,MESSAGE0-9,WARNING0-9,ERROR0-9,SILENT"> MESSAGE </parameter>
     <!--Which option to use for Overlay: False, BIB. Then use, e.g., Config.OverlayFalse in the condition-->
     <parameter name="Overlay" type="string">False</parameter>
     <!--Possible values and conditions for option Overlay-->

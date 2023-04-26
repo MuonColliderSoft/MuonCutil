@@ -11,13 +11,15 @@
   <parameter name="InputCollection" type="string" value="VXDTrackerHits" />
   <!-- Name of the output filtered hit collection -->
   <parameter name="OutputCollection" type="string" value="VXDTrackerHits_DLFiltered" />
-  <!-- Configuration of the maximum dX and dTheta between a pair of hits at the inner and outer layer -->
-  <!-- 4 numbers per double-layer: <inner layer ID>  <outer layer ID>  <dX max [mm]>  <dTheta max [mrad]> -->
+  <!-- Maximum time difference between 2 hits to form a stub candidate -->
+  <parameter name="DeltaTimeMax" type="float"> 0.18 </parameter>
+  <!-- Configuration of the maximum angular distance between a pair of hits in a double layer -->
+  <!-- 4 numbers per double-layer: <inner layer ID>  <outer layer ID>  <dPhi max [mrad]>  <dTheta max [mrad]> -->
   <parameter name="DoubleLayerCuts" type="StringVec">
-      0 1 1.0 0.6
-      2 3 1.0 0.33
-      4 5 1.0 0.27
-      6 7 1.0 0.21
+      0 1 0.6 0.35
+      2 3 0.6 0.33
+      4 5 0.5 0.27
+      6 7 0.4 0.21
   </parameter>
   <parameter name="Verbosity" type="string"> MESSAGE5 </parameter>
 </processor>
@@ -28,14 +30,16 @@
   <!-- Name of the input hit collection -->
   <parameter name="InputCollection" type="string" value="VXDEndcapTrackerHits" />
   <!-- Name of the output filtered hit collection -->
+  <!-- Maximum time difference between 2 hits to form a stub candidate -->
+  <parameter name="DeltaTimeMax" type="float"> 0.18 </parameter>
   <parameter name="OutputCollection" type="string" value="VXDEndcapTrackerHits_DLFiltered" />
-  <!-- Configuration of the maximum dX and dTheta between a pair of hits at the inner and outer layer -->
-  <!-- 4 numbers per double-layer: <inner layer ID>  <outer layer ID>  <dX max [mm]>  <dTheta max [mrad]> -->
+  <!-- Configuration of the maximum angular distance between a pair of hits in a double layer -->
+  <!-- 4 numbers per double-layer: <inner layer ID>  <outer layer ID>  <dPhi max [mrad]>  <dTheta max [mrad]> -->
   <parameter name="DoubleLayerCuts" type="StringVec">
-      0 1 1.0 0.21
-      2 3 1.0 0.18
-      4 5 0.8 0.12
-      6 7 0.6 0.12
+      0 1 0.6 0.21
+      2 3 0.6 0.18
+      4 5 0.5 0.12
+      6 7 0.4 0.12
   </parameter>
   <parameter name="Verbosity" type="string"> MESSAGE5 </parameter>
 </processor>
@@ -47,13 +51,15 @@
   <parameter name="InputCollection" type="string" value="VXDTrackerHits" />
   <!-- Name of the output filtered hit collection -->
   <parameter name="OutputCollection" type="string" value="VXDTrackerHits_DLFiltered" />
-  <!-- Configuration of the maximum dX and dTheta between a pair of hits at the inner and outer layer -->
-  <!-- 4 numbers per double-layer: <inner layer ID>  <outer layer ID>  <dX max [mm]>  <dTheta max [mrad]> -->
+  <!-- Maximum time difference between 2 hits to form a stub candidate -->
+  <parameter name="DeltaTimeMax" type="float"> 0.18 </parameter>
+  <!-- Configuration of the maximum angular distance between a pair of hits in a double layer -->
+  <!-- 4 numbers per double-layer: <inner layer ID>  <outer layer ID>  <dPhi max [mrad]> <dTheta max [mrad]> -->
   <parameter name="DoubleLayerCuts" type="StringVec">
-        0 1 0.55 0.3
-        2 3 0.55 0.2
-        4 5 0.5 0.15
-        6 7 0.4 0.12
+        0 1 0.4 0.3
+        2 3 0.4 0.2
+        4 5 0.3 0.15
+        6 7 0.2 0.12
   </parameter>
   <parameter name="Verbosity" type="string"> MESSAGE5 </parameter>
 </processor>
@@ -65,13 +71,15 @@
  <parameter name="InputCollection" type="string" value="VXDEndcapTrackerHits" />
   <!-- Name of the output filtered hit collection -->
   <parameter name="OutputCollection" type="string" value="VXDEndcapTrackerHits_DLFiltered" />
-  <!-- Configuration of the maximum dX and dTheta between a pair of hits at the inner and outer layer -->
-  <!-- 4 numbers per double-layer: <inner layer ID>  <outer layer ID>  <dX max [mm]>  <dTheta max [mrad]> -->
+  <!-- Maximum time difference between 2 hits to form a stub candidate -->
+  <parameter name="DeltaTimeMax" type="float"> 0.18 </parameter>
+  <!-- Configuration of the maximum angular distance between a pair of hits in a double layer -->
+  <!-- 4 numbers per double-layer: <inner layer ID>  <outer layer ID>  <dPhi max [mrad]>  <dTheta max [mrad]> -->
   <parameter name="DoubleLayerCuts" type="StringVec">
-        0 1 0.7 0.11
-        2 3 0.7 0.09
-        4 5 0.4 0.06
-        6 7 0.3 0.042
+        0 1 0.5 0.11
+        2 3 0.5 0.09
+        4 5 0.3 0.06
+        6 7 0.2 0.042
   </parameter>
   <parameter name="Verbosity" type="string"> MESSAGE5 </parameter>
 </processor>

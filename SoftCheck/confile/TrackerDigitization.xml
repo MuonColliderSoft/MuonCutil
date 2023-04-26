@@ -172,3 +172,124 @@
     <parameter name="Verbosity" type="string"> WARNING </parameter>
   </processor>
 
+ <processor name="VXDDigitiser" type="MuonCVXDDigitiser">
+    <!--MuonCVXDDigitiser should create VTX TrackerHits from SimTrackerHits-->
+    <!--Binning scheme used for charge discretization-->
+    <parameter name="ChargeDigitizeBinning" type="int">1 </parameter>
+    <!--Number of bits used to determine bins for charge discretization-->
+    <parameter name="ChargeDigitizeNumBits" type="int">4 </parameter>
+    <!--Cell dynamic range in electrons-->
+    <parameter name="ChargeMaximum" type="double">15000 </parameter>
+    <!--Name of the SimTrackerHit collection-->
+    <parameter name="CollectionName" type="string" lcioInType="SimTrackerHit">VertexBarrelCollection </parameter>
+    <!--Cut on delta-ray energy (MeV)-->
+    <parameter name="CutOnDeltaRays" type="double">0.03 </parameter>
+    <!--Diffusion coefficient, sqrt(D / mu / V).-->
+    <parameter name="DiffusionCoefficient" type="double">0.07 </parameter>
+    <!--Flag to enable Digitization of the charge collected on pixels-->
+    <parameter name="DigitizeCharge" type="int">1 </parameter>
+    <!--Flag to enable digitization of timing information.-->
+    <parameter name="DigitizeTime" type="int">1 </parameter>
+    <!--Apply Electronic Effects-->
+    <parameter name="ElectronicEffects" type="int">1 </parameter>
+    <!--electronic noise in electrons-->
+    <parameter name="ElectronicNoise" type="double">80 </parameter>
+    <!--Electrons per keV-->
+    <parameter name="ElectronsPerKeV" type="double">270.3 </parameter>
+    <!--Energy Loss keV/mm-->
+    <parameter name="EnergyLoss" type="double">280 </parameter>
+    <!--Max delta in energy between G4 prediction and random sampling for each hit in electrons-->
+    <parameter name="MaxEnergyDelta" type="double">100 </parameter>
+    <!--Maximum values for track length (in mm)-->
+    <parameter name="MaxTrackLength" type="double">10 </parameter>
+    <!--Name of the output TrackerHit collection-->
+    <parameter name="OutputCollectionName" type="string" lcioOutType="TrackerHitPlane">VXDTrackerHits </parameter>
+    <!--Pixel Size X-->
+    <parameter name="PixelSizeX" type="double">0.025 </parameter>
+    <!--Pixel Size Y-->
+    <parameter name="PixelSizeY" type="double">0.025 </parameter>
+    <!--Apply Poisson smearing of electrons collected on pixels-->
+    <parameter name="PoissonSmearing" type="int">1 </parameter>
+    <!--Name of the output VTX trackerhit relation collection-->
+    <parameter name="RelationColName" type="string" lcioOutType="LCRelation">VXDTrackerHitRelations </parameter>
+    <!--Segment Length in mm-->
+    <parameter name="SegmentLength" type="double">0.005 </parameter>
+    <!--Store fired pixels-->
+   <parameter name="StoreFiredPixels" type="int">0 </parameter>
+    <!--Name of Vertex detector-->
+    <parameter name="SubDetectorName" type="string">VertexBarrel </parameter>
+    <!--Tangent of Lorentz Angle-->
+    <parameter name="TanLorentz" type="double">0.8 </parameter>
+    <!--Tangent of Lorentz Angle along Y-->
+    <parameter name="TanLorentzY" type="double">0 </parameter>
+    <!--Cell Threshold in electrons-->
+    <parameter name="Threshold" type="double">500 </parameter>
+    <!--sigma of Gaussian used in threshold smearing, in electrons-->
+    <parameter name="ThresholdSmearSigma" type="int">25 </parameter>
+    <!--Binning scheme used for time discretization-->
+    <parameter name="TimeDigitizeBinning" type="int">0 </parameter>
+    <!--Number of bits used to determine bins for time discretization-->
+    <parameter name="TimeDigitizeNumBits" type="int">10 </parameter>
+    <!--Cell dynamic range for timing measurement [ns]-->
+    <parameter name="TimeMaximum" type="double">10 </parameter>
+    <!--Effective intrinsic time measurement resolution effects (ns).-->
+    <parameter name="TimeSmearingSigma" type="double">0.05 </parameter>
+    <!--verbosity level of this processor ("DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT")-->
+    <!--parameter name="Verbosity" type="string">MESSAGE </parameter-->
+  </processor>
+
+  <processor name="VXDTWDigitiser" type="MuonCVXDRealDigitiser">
+ <!--MuonCVXDRealDigitiser should create VTX TrackerHits from SimTrackerHits-->
+  <!--Name of the SimTrackerHit collection-->
+  <parameter name="CollectionName" type="string" lcioInType="SimTrackerHit">VertexBarrelCollection </parameter>
+  <!--Cut on delta-ray energy (MeV)-->
+  <parameter name="CutOnDeltaRays" type="double">0.03 </parameter>
+  <!--Diffusion coefficient, sqrt(D / mu / V).-->
+  <parameter name="DiffusionCoefficient" type="double">0.07 </parameter>
+  <!--Apply Electronic Effects-->
+  <parameter name="ElectronicEffects" type="int">1 </parameter>
+  <!--electronic noise in electrons-->
+  <parameter name="ElectronicNoise" type="double">80 </parameter>
+  <!--Electrons per keV-->
+  <parameter name="ElectronsPerKeV" type="double">270.3 </parameter>
+  <!--Energy Loss keV/mm-->
+  <parameter name="EnergyLoss" type="double">280 </parameter>
+  <!--Max delta in energy between G4 prediction and random sampling for each hit in electrons-->
+  <parameter name="MaxEnergyDelta" type="double">100 </parameter>
+  <!--Maximum values for track length (in mm)-->
+  <parameter name="MaxTrackLength" type="double">10 </parameter>
+  <!--Name of the output TrackerHit collection-->
+  <parameter name="OutputCollectionName" type="string" lcioOutType="TrackerHitPlane">VXDTrackerHits </parameter>
+  <!--Pixel Size X-->
+  <parameter name="PixelSizeX" type="double">0.025 </parameter>
+  <!--Pixel Size Y-->
+  <parameter name="PixelSizeY" type="double">0.025 </parameter>
+  <!--Apply Poisson smearing of electrons collected on pixels-->
+  <parameter name="PoissonSmearing" type="int">1 </parameter>
+  <!--ADC slope for chip RD53A-->
+  <parameter name="RD53Aslope" type="float">0.1 </parameter>
+  <!--Name of the output VTX trackerhit relation collection-->
+  <parameter name="RelationColName" type="string" lcioOutType="LCRelation">VXDTrackerHitRelations </parameter>
+  <!--Segment Length in mm-->
+  <parameter name="SegmentLength" type="double">0.005 </parameter>
+  <!--Sensor model to be used (0 : ChipRD53A, 1 : Trivial)-->
+  <parameter name="SensorType" type="int">1 </parameter>
+  <!--File name for statistics (None for disabling the feature)-->
+  <parameter name="StatisticsFilename" type="string">stats.root</parameter>
+  <!--Store fired pixels-->
+  <parameter name="StoreFiredPixels" type="int">0 </parameter>
+  <!--Name of Vertex detector-->
+  <parameter name="SubDetectorName" type="string">VertexBarrel </parameter>
+  <!--Tangent of Lorentz Angle-->
+  <parameter name="TanLorentz" type="double">0.8 </parameter>
+  <!--Tangent of Lorentz Angle along Y-->
+  <parameter name="TanLorentzY" type="double">0 </parameter>
+  <!--Cell Threshold in electrons-->
+  <parameter name="Threshold" type="double">500 </parameter>
+  <!--verbosity level of this processor ("DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT")-->
+  <!-- parameter name="Verbosity" type="string">MESSAGE </parameter-->
+  <!--Window size (in nsec)-->
+  <parameter name="WindowSize" type="float">25 </parameter>
+</processor>
+
+
