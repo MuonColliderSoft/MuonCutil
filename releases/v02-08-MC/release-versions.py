@@ -4,7 +4,7 @@
 # The external base tools need to be installed
 #
 # Author: MuonC Software team 
-# Date: March 01, 2023
+# Date: April 26, 2023
 ###########################################
 import datetime
 import platform
@@ -74,17 +74,15 @@ if( my_mysql_path !=  None ):
 
 ## System software
 
-Geant4_version = "10.6.3-1"
+Geant4_version = "11.1.0-1"
 
-CLHEP_version =  "2.4.1.3"
+CLHEP_version =  "2.4.6.3"
 
-ROOT_version = "6.26.10-1"
+ROOT_version = "6.28.02"
 
 GSL_version = "2.6.7"
 
 Qt5_version = "v5.15.3-1"
-
-CMake_version = "3.20.2.7"
 
 Boost_version = "1.75.0-8"
 
@@ -114,8 +112,6 @@ MarlinReco_version = "v01-33-01"
 
 MarlinUtil_version = "v01-17"
 
-#DetectorSimulation_version = "v01-04-MC"
-
 # ---
 
 DD4hep_version = "v01-25-01"
@@ -133,8 +129,7 @@ LCFIPlus_version = "v00-10-01"
 
 MarlinTrk_version = "v02-09-01"
 
-# TODO new version required
-MarlinTrkProcessors_version = "v02-14-MC"
+MarlinTrkProcessors_version = "v02-15-MC"
 
 ForwardTracking_version = "v01-14-MC"
 
@@ -161,7 +156,7 @@ LCTuple_version = "v01-15-MC"
 
 ClicPerformance_version = "v02-04-01"
 
-MuonCVXDDigitiser_version = "HEAD"
+MuonCVXDDigitiser_version = "v00-01"
 
 # ---
 
@@ -169,8 +164,7 @@ CEDViewer_version = "v01-19-01"
 
 Overlay_version = "v00-24-MC"
 
-# TODO new version required
-lcgeo_version = "v00-17-MC"
+lcgeo_version = "v00-18-01-MC"
 
 LCIO_version = "v02-17-MC"
 
