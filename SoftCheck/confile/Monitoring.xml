@@ -84,12 +84,11 @@
     <parameter name="SaveBremsstrahlungPhotons" type="bool">false </parameter>
     <!--Names of the SimCaloHits input collections-->
     <parameter name="SimCaloHitCollections" type="StringVec" lcioInType="SimCalorimeterHit">
-      VertexBarrelCollection
-      VertexEndcapCollection
-      InnerTrackerBarrelCollection
-      InnerTrackerEndcapCollection
-      OuterTrackerBarrelCollection
-      OuterTrackerEndcapCollection
+      ECalBarrelCollection
+      ECalEndcapCollection      
+      HCalBarrelCollection      
+      HCalEndcapCollection      
+      HCalRingCollection
       YokeBarrelCollection
       YokeEndcapCollection
     </parameter>
@@ -99,12 +98,12 @@
     </parameter>
     <!--Names of the SimTrackerHits input collection-->
     <parameter name="SimTrackerHitCollections" type="StringVec" lcioInType="SimTrackerHit">
-      VXDTrackerHits
-      VXDEndcapTrackerHits
-      ITrackerHits
-      ITrackerEndcapHits
-      OTrackerHits
-      OTrackerEndcapHits
+      VertexBarrelCollection
+      VertexEndcapCollection
+      InnerTrackerBarrelCollection
+      InnerTrackerEndcapCollection
+      OuterTrackerBarrelCollection
+      OuterTrackerEndcapCollection
     </parameter>
     <!--Name of the Tracks input collection-->
     <parameter name="TrackCollection" type="string" lcioInType="Track"> SiTracks_Refitted </parameter>
