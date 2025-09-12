@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="us-ascii"?>
+
+<marlin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ilcsoft.desy.de/marlin/marlin.xsd">
+ <execute>
+  <!-- <processor name="MyEventSelector"/> -->
+  <!--   <if condition="MyEventSelector"> -->
+      <processor name="MyInitializeDD4hep"/>
+      <processor name="MyCEDViewer"/>
+   <!-- </if> -->
+</execute>
+
+ <global>
+   <parameter name="LCIOInputFiles">Output_REC.slcio</parameter> 
+   <parameter name="SkipNEvents" value="0"/>
+   <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> MESSAGE  </parameter>  
+ </global>
+
+ <processor name="MyInitializeDD4hep" type="InitializeDD4hep">
+  <parameter name="DD4hepXMLFile">
+    /usr/share/muonc-detector-geometry/MuSIC_v2/MuSIC_v2.xml
+  </parameter>
+</processor>
+
+ <processor name="MyEventSelector" type="EventSelector">
+   <!--event list - pairs of Eventnumber RunNumber-->
+   <parameter name="EventList" type="IntVec"> 
+       28 0
+       33 0
+       52 0
+       63 0
+       73 0
+       78 0
+   </parameter>
+ </processor>
+
+
+<processor name="MyCEDViewer" type="DDCEDViewer">
+  <parameter name="DrawDetector" type="bool">true </parameter>
+  <parameter name="DrawSurfaces" type="bool">false </parameter>
+  <parameter name="DetailledDrawing"></parameter>
+ <!--CEDViewer: event display of LCIO objects  - based on CED by A.Zhelezov.-->
+  <!--color scheme to be used for drawing - see startup log MESSAGEs for options-->
+  <parameter name="ColorScheme" type="int">10 </parameter>
+  <!--draw detector from GEAR file with given ID (see MarlinCED::newEvent() ) : 0 ILD, 1 CLIC, -1 none-->
+  <parameter name="DrawDetectorID" type="int">0 </parameter>
+  <!--draw a helix for PFO objects (usefull for Si tracker): 0: disabled, 1: enabled-->
+  <parameter name="DrawHelixForPFOs" type="int">0 </parameter>
+  <!--draw a helix for Track objects: -1: none, 0: default, 1: atIP, 2: atFirstHit, 3: atLastHit, 4: atCalorimeter-->
+  <parameter name="DrawHelixForTrack" type="int">0 </parameter>
+  <!-- Color recunstructed particle by energy -->
+  <parameter name="ColorByEnergy" type="bool">false</parameter>
+  <!-- Minimal value for energy which will be represented as blue -->
+  <parameter name="ColorByEnergyMin" type="double">0.0</parameter>
+  <!-- Maximal value for energy which will be represented as red -->
+  <parameter name="ColorByEnergyMax" type="double">35.0</parameter>
+  <!-- Hue value that will be used to determine the pallete -->
+  <parameter name="ColorByEnergySaturation" type="double">1.0</parameter>
+  <!-- Brigtness value that will be used to determine the pallete -->
+  <parameter name="ColorByEnergyBrightness" type="double">1.0</parameter>
+  <!-- Automatically adjust event by event the blue to min energy and red to max energy of event -->
+  <parameter name="ColorByEnergyAutoColor" type="bool">false</parameter>
+  <!-- Scale line thickness of drawn helixes, usefull for image dumps -->
+  <parameter name="ScaleLineThickness" type="double">1</parameter>
+  <!-- Scale marker size of cluster markers, usefull for image dumps -->
+  <parameter name="ScaleMarkerSize" type="double">1</parameter>
+  <!--Max R (mm) Extent for drawing Helix if UseTPCForLimitsOfHelix false-->
+  <parameter name="HelixMaxR" type="float">2000 </parameter>
+  <!--Max Z (mm) Extent for drawing Helix if UseTPCForLimitsOfHelix false-->
+  <parameter name="HelixMaxZ" type="float">2500 </parameter>
+  <!--minimum energy of MCParticles to be drawn-->
+  <parameter name="MCParticleEnergyCut" type="float">0.001 </parameter>
+  <!--draw helices in the color of the track/PFO: 0: disabled (lightgrey), 1: enabled-->
+  <parameter name="UseColorForHelixTracks" type="int">0 </parameter>
+  <!--Use the gear parameters to define the max extent of drawing a helix-->
+  <parameter name="UseTPCForLimitsOfHelix" type="bool">true </parameter>
+  <!--If set true generator status is ignored for MCParticles to be drawn-->
+  <parameter name="UsingParticleGun" type="bool">false </parameter>
+  <!--verbosity level of this processor ("DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT")-->
+  <!--parameter name="Verbosity" type="string">DEBUG </parameter-->
+  <!--Wait for Keyboard before proceed-->
+  <parameter name="WaitForKeyboard" type="int">1 </parameter>
+  <!-- ColName, marker type[0-2], size, layer -->
+  <parameter name="DrawInLayer"> 
+     MCParticle           0 3 0
+     MCPhysicsParticles	  0 3 1
+     
+     SiTracks 	           0 6 2
+     SiTracksACTs          0 6 3
+     SiTracksCT            0 6 3
+     SiTracks_Refitted     0 6 4
+
+     VXDTrackerHits        0 5 5
+     VXDEndcapTrackerHits  0 5 5
+     ITrackerEndcapHits    0 5 6
+     ITrackerHits          0 5 6
+     OTrackerEndcapHits    0 5 7
+     OTrackerHits          0 5 7
+
+     VertexBarrelCollection       0 5 8
+     VertexEndcapCollection       0 5 8
+     InnerTrackerBarrelCollection 0 5 9
+     InnerTrackerEndcapCollection 0 5 9
+     OuterTrackerBarrelCollection 0 5 10
+     OuterTrackerEndcapCollection 0 5 10
+
+     MUON                        0 3 11
+     	  
+     PandoraClusters             0 3 12
+     SelectedPandoraPFOs         0 3 13
+     TightSelectedPandoraPFOs    0 3 14
+     LooseSelectedPandoraPFOs    0 3 15	  
+     LE_SelectedPandoraPFOs	     0 3 16 
+     LE_TightSelectedPandoraPFOs 0 3 17 
+     LE_LooseSelectedPandoraPFOs 0 3 18
+
+     PandoraPFOs                 0 3 19
+     JetCaloOut                  0 3 20
+
+     PandoraStartVertices        0 3 21
+  </parameter>
+</processor>
+
+
+</marlin>
+
