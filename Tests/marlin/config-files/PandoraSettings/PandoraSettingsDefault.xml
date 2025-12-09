@@ -32,7 +32,7 @@
     </algorithm>
 
     <!-- Standalone muon clustering -->
-    <algorithm type = "MuonReconstruction">
+    <algorithm type = "MCMuonReconstruction">
         <algorithm type = "ConeClustering" description = "MuonClusterFormation">
             <TanConeAngleCoarse>0.3</TanConeAngleCoarse>
             <ConeApproachMaxSeparation>2000</ConeApproachMaxSeparation>
